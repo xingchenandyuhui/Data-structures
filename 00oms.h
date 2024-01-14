@@ -5,46 +5,45 @@
 #include <stdlib.h>
 #include <string.h>
 
-// ¶¨Òå¶©µ¥½á¹¹Ìå
+// å®šä¹‰è®¢å•ç»“æ„ä½“
 typedef struct Order {
-    int id;//¶©µ¥±àºÅ
-    char product_name[50];//¶©µ¥Ãû³Æ 
-    int num; //¶©µ¥ÊıÁ¿ 
-    double amount;//¶©µ¥½ğ¶î 
-    char time[20];//¶©µ¥Ê±¼ä 
+    int id;//è®¢å•ç¼–å·
+    char product_name[50];//è®¢å•åç§° 
+    int num; //è®¢å•æ•°é‡ 
+    double amount;//è®¢å•é‡‘é¢ 
+    char time[20];//è®¢å•æ—¶é—´ 
     struct Order *left;
     struct Order *right;
 } Order;
 
-//¹¦ÄÜÄ£¿é 
+//åŠŸèƒ½æ¨¡å— 
 
-//´´½¨¶©µ¥ 
+//åˆ›å»ºè®¢å• 
 Order* create_order(int id, char *product_name, 
 					int num, double amount, char *time);
 								
-//Ìí¼Ó¶©µ¥ 
+//æ·»åŠ è®¢å• 
 Order* insert_order(Order *root, int id, char *product_name,
 						 int num, double amount, char *time);
 						 
-// É¾³ı¶©µ¥
+// åˆ é™¤è®¢å•
 //void delete_order(Order *root, int id); 
 Order* delete_order(Order *root, int id); 
-//ĞŞ¸Ä¶©µ¥
+//ä¿®æ”¹è®¢å•
 void update_order(Order *root, int id, char *product_name, 
 					int num, double amount, char *time)  ; 
 					
-//²éÑ¯¶©µ¥
+//æŸ¥è¯¢è®¢å•
 Order* search_order(Order *root, int id) ; 
 
-//ÖĞĞò±éÀúÊä³ö¶©µ¥ÁĞ±í
+//ä¸­åºéå†è¾“å‡ºè®¢å•åˆ—è¡¨
 void inorder_print(Order *root); 
  
-////ÅÅĞò
+////æ’åº
 //void QuickSort() ; 
 
-// ²éÕÒ×îĞ¡½Úµã
+// æŸ¥æ‰¾æœ€å°èŠ‚ç‚¹
 Order* find_min(Order *root);
 
 
 #endif
-
